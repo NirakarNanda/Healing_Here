@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { Button } from 'flowbite-react'
-import Image from 'next/image'
-import React, { useState } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { Button } from 'flowbite-react';
+import Image from 'next/image';
+import React, { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,9 +13,9 @@ export const Header = () => {
   };
 
   return (
-    <div className="relative flex flex-col md:flex-row items-center p-2 md:p-4 justify-between">
+    <header className="relative flex flex-col md:flex-row items-center p-2 md:p-4 justify-between bg-white">
       {/* Logo Section */}
-      <div className="flex items-center ">
+      <div className="flex items-center w-full md:w-auto">
         <div className="relative w-64 h-16 cursor-pointer">
           <Image 
             src="/assets/Colour Logo.png" 
@@ -32,19 +32,19 @@ export const Header = () => {
       </div>
 
       {/* Navigation and Appointment Button */}
-      <div className={`flex flex-col md:flex-row md:items-center md:space-x-8 mt-4 md:mt-0 ${isMenuOpen ? 'block' : 'hidden'} md:flex`}>
-      <div className="flex gap-1 sm800:gap-2 w-full">
+      <nav className={`flex flex-col md:flex-row md:items-center md:space-x-8 mt-4 md:mt-0 ${isMenuOpen ? 'block' : 'hidden'} md:flex`}>
+        <div className="flex flex-col md:flex-row gap-1 sm800:gap-2 w-full">
           <p className='cursor-pointer px-4 py-2 text-black hover:text-[#516EFF] transition-colors whitespace-nowrap'>Home</p>
           <p className='cursor-pointer px-4 py-2 text-black hover:text-[#516EFF] transition-colors whitespace-nowrap'>Services</p>
-          <p className='cursor-pointer px-4 py-2 text-black hover:text-[#516EFF] transition-colors whitespace-nowrap'>Specialization</p>
-          <p className='cursor-pointer px-4 py-2 text-black hover:text-[#516EFF] transition-colors whitespace-nowrap'>Achievements</p>
-          <p className='cursor-pointer px-4 py-2 text-black hover:text-[#516EFF] transition-colors whitespace-nowrap'>Contacts</p>
-      </div>
-
-        <div className="flex justify-center md:ml-4 mt-4 md:mt-0">
-          <Button className='bg-[#516EFF] text-white rounded hover:bg-[#4353B3] transition-colors'>Appointment</Button>
+          <p className='cursor-pointer px-4 py-2 text-black hover:text-[#5169E1] transition-colors whitespace-nowrap'>Specialization</p>
+          <p className='cursor-pointer px-4 py-2 text-black hover:text-[#5169E1] transition-colors whitespace-nowrap'>Achievements</p>
+          <p className='cursor-pointer px-4 py-2 text-black hover:text-[#5169E1] transition-colors whitespace-nowrap'>Contacts</p>
         </div>
-      </div>
-    </div>
-  )
-}
+
+        <div className="flex justify-center md:justify-start md:ml-4 mt-4 md:mt-0">
+          <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-colors w-full md:w-auto'>Appointment</Button>
+        </div>
+      </nav>
+    </header>
+  );
+};
