@@ -20,7 +20,7 @@ export const Header = () => {
           <Image 
             src="/assets/Colour Logo.png" 
             alt="logo" 
-            layout="fill" 
+            fill
             objectFit="contain" 
           />
         </div>
