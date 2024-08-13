@@ -13,8 +13,8 @@ export const Footer = () => {
     return (
         <footer>
             {/* flex-wrap xl:flex-nowrap gap-20 items-center */}
-            <div className="flex flex-wrap xl:flex-row xl:flex-nowrap xl:items-center gap-16 px-4 sm:px-10 pb-10 md:py-10 md:px-28 text-white bg-[#516EFF]">
-                <div>
+            <div className="flex flex-wrap xl:flex-row xl:flex-nowrap xl:items-center gap-10 px-4 sm:px-10 pb-10 md:py-10 md:px-28 text-white bg-[#516EFF]">
+                <div className="space-y-2 sm:space-y-0">
                     <Image
                         src="/assets/Footer Logo.png"
                         alt="Logo"
