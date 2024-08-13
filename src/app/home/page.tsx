@@ -3,6 +3,7 @@ import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { CTASection } from "@/components/CTA-Section";
 import { RecoverySection } from "@/components/RecoverySection";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero/>
       <CTASection />
       <RecoverySection />
+      <Footer />
     </>
   );
 }
