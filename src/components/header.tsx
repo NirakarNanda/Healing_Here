@@ -27,7 +27,7 @@ export const Header = () => {
       </div>
 
       {/* Hamburger Icon */}
-      <div className="absolute top-4 right-4 sm800:hidden md:hidden cursor-pointer" onClick={toggleMenu}>
+      <div className="absolute top-1/2 -translate-y-1/2 right-4 sm800:hidden md:hidden cursor-pointer" onClick={toggleMenu}>
         {isMenuOpen ? <FaTimes size={24} color="#000" /> : <FaBars size={24} color="#000" />}
       </div>
 

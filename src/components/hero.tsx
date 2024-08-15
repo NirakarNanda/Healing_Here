@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 export const Hero = () => {
   return (
-    <section className="flex flex-col md:flex-row h-auto md:h-[769px] p-8 md:p-12 lg:p-16 items-center gap-8 md:gap-12 lg:gap-16 bg-white justify-between">
+    <section className="flex flex-col md:flex-row h-auto md:h-[769px] px-4 py-8 md:p-12 lg:p-16 items-center gap-8 md:gap-12 lg:gap-16 bg-white justify-between">
       <div className="flex flex-col flex-1 items-start gap-6 md:gap-8">
-        <h1 className="text-black font-sans text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+        <h1 className="text-black font-sans text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
           Restoring Your <span className="text-[#4169E1]">Movement,</span> Renewing Your Life
         </h1>
         <h2 className="text-[#4169E1] font-sans text-3xl md:text-4xl lg:text-5xl font-bold">
@@ -25,7 +25,7 @@ export const Hero = () => {
           alt="Physiotherapy treatment illustration" 
           width={640} 
           height={540} 
-          className="object-contain ml-6" 
+          className="object-contain sm:ml-6" 
         />
       </div>
     </section>
