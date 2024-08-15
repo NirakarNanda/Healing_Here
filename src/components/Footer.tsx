@@ -13,7 +13,7 @@ export const Footer = () => {
     return (
         <footer>
             {/* flex-wrap xl:flex-nowrap gap-20 items-center */}
-            <div className="flex flex-wrap xl:flex-row xl:flex-nowrap xl:items-center gap-10 px-4 sm:px-10 pb-10 md:py-10 md:px-28 text-white bg-[#516EFF]">
+            <div className="flex flex-wrap xl:flex-row xl:flex-nowrap xl:items-center gap-5 sm:gap-10 px-4 sm:px-10 pb-10 md:py-10 md:px-28 text-white bg-[#516EFF]">
                 <div className="space-y-2 sm:space-y-0">
                     <Image
                         src="/assets/Footer Logo.png"
@@ -28,7 +28,7 @@ export const Footer = () => {
                 <div className=" w-full h-[1px] xl:w-[1px] xl:h-60 bg-white" />
                 <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-2">
-                        <PiLinkFill size={44} />
+                        <PiLinkFill className="text-3xl sm:text-5xl" />
                         <p className="text-xl">Important link</p>
                     </div>
                     <div className="flex items-center gap-20 xl:gap-28">
@@ -38,19 +38,19 @@ export const Footer = () => {
                             <LinkBox Icon={FaInstagramSquare} content={"Instagram"} />
                             <LinkBox Icon={FaLinkedin} content={"Linkedin"} />
                         </div>
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-1">
                             <p>Career</p>
                             <LinkBox Icon={FaQuestionCircle} content={"Support"} order={1} />
                             <p>Privacy policy</p>
                         </div>
                     </div>
                 </div>
-                <div className=" w-full h-[1px] xl:w-[1px] xl:h-60 bg-white" />
-                <div className="flex flex-col gap-3">
-                    <p className="text-xl font-semibold text-[#FDF6B2]">Say hello to us</p>
+                <div className="w-full h-[1px] xl:w-[1px] xl:h-60 bg-white" />
+                <div className="flex flex-col gap-3 text-base sm:text-xl">
+                    <p className=" font-semibold text-[#FDF6B2]">Say hello to us</p>
                     <div className="flex items-end gap-4">
-                        <MdEmail size={44} />
-                        <p className="text-xl">Healinghere@gmail.com</p>
+                        <MdEmail className="text-2xl sm:text-4xl" />
+                        <p className="">Healinghere@gmail.com</p>
                     </div>
                     <div className="flex gap-6">
                         <Image
@@ -61,13 +61,13 @@ export const Footer = () => {
                             className="object-contain"
                         />
                         <div className="flex flex-col gap-2">
-                            <p className="text-xl">Address</p>
+                            <p className="">Address</p>
                             <p>Patabhadi, near RTO office, Sonepur, Odisha 762017</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="w-full py-2 sm:py-5 sm:px-48 text-center text-white bg-[#216583]">
+            <div className="w-full py-2 sm:py-5 sm:px-48 text-xs sm:text-base text-center text-white bg-[#216583]">
                 <p>© 2000-2021, All rights reserved</p>
             </div>
         </footer>
