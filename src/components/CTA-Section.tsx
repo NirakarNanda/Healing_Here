@@ -1,7 +1,7 @@
 "use client";
 
-import { IconsCard } from "@/components/IconsCard";
-import { ImageCard } from "./ImageCards";
+import { IconsCard } from "@/components/ui/IconsCard";
+import { ImageCard } from "./ui/ImageCards";
 import { IoCallOutline } from "react-icons/io5";
 import { BsCalendar2Date } from "react-icons/bs";
 import { CiMedicalCase } from "react-icons/ci";

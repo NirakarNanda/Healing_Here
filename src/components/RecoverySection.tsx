@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { CheckList } from "./CheckList"
+import { CheckList } from "./ui/CheckList"
 
 export const RecoverySection = () => {
     return (
