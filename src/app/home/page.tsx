@@ -9,6 +9,8 @@ import { LinkBox } from "@/components/LinkBox";
 import { RecoverySection } from "@/components/RecoverySection";
 import Image from "next/image";
 import { IconBaseProps } from "react-icons";
+import { ServiceSection } from "@/components/ServiceSection";
+import { ContactSection } from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -19,6 +21,8 @@ export default function Home() {
       <RecoverySection/>
       <AchievementCarousel/>
       <KeyServices/>
+      <ContactSection />
+      <ServiceSection />
       <Footer/>
     </>
   );

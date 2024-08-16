@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+label {
+    color: #516EFF;
+}
