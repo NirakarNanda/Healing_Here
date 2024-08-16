@@ -5,6 +5,7 @@ import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import KeyServices from "@/components/keyServices";
 import { RecoverySection } from "@/components/RecoverySection";
+import { Footer } from "flowbite-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <RecoverySection/>
       <AchievementCarousel/>
       <KeyServices/>
+      <Footer />
     </>
   );
 }
