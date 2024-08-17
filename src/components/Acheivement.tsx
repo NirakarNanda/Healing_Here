@@ -38,24 +38,25 @@ const AchievementCarousel: React.FC = () => {
 
   return (
     <div className="p-4 sm:p-8 relative">
-      <div className="flex flex-col items-start mb-8 sm:mb-16 mx-2 sm:mx-4">
-        <div className="flex flex-wrap items-center">
-          <h1 className="text-[#516EFF] font-Inter text-3xl sm:text-[42px] font-semibold leading-tight sm:leading-[64px] mr-2">
-            Our
-          </h1>
-          <div className="text-[#FFD700] font-Inter text-4xl sm:text-[52px] font-extrabold leading-tight sm:leading-[64px]">
-            Achievements
-          </div>
-        </div>
-        <div className="flex flex-wrap items-center mt-2">
-          <h1 className="text-[#516EFF] font-Inter text-3xl sm:text-[42px] font-semibold leading-tight sm:leading-[64px] mr-2">
-            and
-          </h1>
-          <div className="text-[#516EFF] font-Inter text-4xl sm:text-[52px] font-extrabold leading-tight sm:leading-[64px]">
-            Privilege
-          </div>
-        </div>
-      </div>
+<div className="flex flex-col items-center mb-8 sm:mb-16 mx-2 sm:mx-4">
+  <div className="flex flex-wrap items-center">
+    <h1 className="text-[#516EFF] font-Inter text-3xl sm:text-[42px] font-semibold leading-tight sm:leading-[64px] mr-2">
+      Our
+    </h1>
+    <div className="text-[#FFD700] font-Inter text-4xl sm:text-[52px] font-extrabold leading-tight sm:leading-[64px]">
+      Achievements
+    </div>
+  </div>
+  <div className="flex flex-wrap items-center mt-2">
+    <h1 className="text-[#516EFF] font-Inter text-3xl sm:text-[42px] font-semibold leading-tight sm:leading-[64px] mr-2">
+      and
+    </h1>
+    <div className="text-[#516EFF] font-Inter text-4xl sm:text-[52px] font-extrabold leading-tight sm:leading-[64px]">
+      Privilege
+    </div>
+  </div>
+</div>
+
       <Swiper
         modules={[Autoplay]}
         spaceBetween={30}

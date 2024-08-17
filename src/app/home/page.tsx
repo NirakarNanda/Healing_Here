@@ -11,6 +11,8 @@ import Image from "next/image";
 import { IconBaseProps } from "react-icons";
 import { ServiceSection } from "@/components/ServiceSection";
 import { ContactSection } from "@/components/Contact";
+import Review from "@/components/Review";
+import Address from "@/components/Address";
 
 export default function Home() {
   return (
@@ -23,6 +25,8 @@ export default function Home() {
       <KeyServices/>
       <ContactSection />
       <ServiceSection />
+      <Review/>
+      <Address/>
       <Footer/>
     </>
   );
