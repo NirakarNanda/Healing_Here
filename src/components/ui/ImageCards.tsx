@@ -13,8 +13,9 @@ export const ImageCard = ({img, content, colour}: CtaCardProps) => {
         src={img}
         height={34}
         width={34}
+        style={{ width: "auto", height: "auto" }}
         alt="facilities-image"
-        objectFit="contain"
+        className="object-contain"
       />
       <p className={`text-center font-semibold ${colour ? 'text-white' : 'text-[#52525B] '}`}>{content}</p>
     </div>

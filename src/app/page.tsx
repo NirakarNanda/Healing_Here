@@ -18,6 +18,8 @@ export default function Home() {
       <AchievementCarousel/>
       <KeyServices/>
       <Footer />
+      {/* <Header/>
+      <Hero/> */}
     </>
   );
 }
