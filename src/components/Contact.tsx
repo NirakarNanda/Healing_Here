@@ -17,7 +17,8 @@ export const ContactSection = () => {
                     alt='contact image'
                     width={500}
                     height={100}
-                    objectFit='contain'
+                    property='true'
+                    className='object-contain'
                 />
 
                 {/* Form */}
