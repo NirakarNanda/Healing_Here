@@ -15,6 +15,7 @@ export const Header = () => {
 
   useEffect(() => {
     const accessToken = Cookies.get('token') || '';
+    console.log(accessToken);
     setToken(accessToken);
   }, []);
 
@@ -24,7 +25,7 @@ export const Header = () => {
     const response = await axios.get('/api/logout');
     if (response.data.success) {
       toast.success('Logout successfully', { style: { color: "white", background: '#333' } });
-      Cookies.remove('accessToken');
+      Cookies.remove('token');
       setToken('');
     } else {
       toast.error(response.data.message, { style: { color: "white", background: '#333' } }); 
@@ -67,7 +68,7 @@ export const Header = () => {
 
         <div suppressHydrationWarning>
           {
-            token ?
+            token && token !== '' ?
               <div className="flex justify-center md:justify-start md:ml-4 mt-4 md:mt-0">
                 <Button onClick={logout}
                   className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-colors w-full md:w-auto'>
