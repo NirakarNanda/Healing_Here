@@ -17,7 +17,7 @@ export const ContactSection = () => {
                     alt='contact image'
                     width={500}
                     height={100}
-                    property='true'
+                    priority={false}
                     className='object-contain'
                 />
 
