@@ -7,15 +7,17 @@ import { Button } from 'flowbite-react';
 import Cookies from 'js-cookie';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { useRouter } from "next/navigation";
 
 export const Header = () => {
-  // const token = Cookies.get('accessToken') || '';
+  const router = useRouter();
   const [token, setToken] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const accessToken = Cookies.get('token') || '';
-    setToken(accessToken);
+    const token = Cookies.get('token') || '';
+    console.log("Token", token);
+    setToken(token);
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -24,15 +26,16 @@ export const Header = () => {
     const response = await axios.get('/api/logout');
     if (response.data.success) {
       toast.success('Logout successfully', { style: { color: "white", background: '#333' } });
-      Cookies.remove('accessToken');
+      Cookies.remove('token');
       setToken('');
+      router.push('/home');
     } else {
-      toast.error(response.data.message, { style: { color: "white", background: '#333' } }); 
+      toast.error(response.data.message, { style: { color: "white", background: '#333' } });
     }
   };
 
   return (
-    <header className="relative flex flex-col md:flex-row items-center p-2 md:p-4 justify-between bg-white">
+    <header className="relative flex flex-col md:flex-row items-center p-2 md:p-4 md:pr-12 justify-between bg-white border-b-2">
       {/* Logo Section */}
       <div className="flex items-center w-full md:w-auto">
         <div className="relative w-64 h-16 cursor-pointer">
@@ -41,6 +44,7 @@ export const Header = () => {
             alt="logo"
             sizes='(max-width: 768px) 100vw,'
             fill
+            priority={true}
             style={{ objectFit: 'contain' }}
           />
         </div>
@@ -61,27 +65,30 @@ export const Header = () => {
           <p className='cursor-pointer px-4 py-2 text-black hover:text-[#5169E1] transition-colors whitespace-nowrap'>Contacts</p>
         </div>
 
-        <div className="flex justify-center md:justify-start md:ml-4 mt-4 md:mt-0">
-          <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-colors w-full md:w-auto'>Appointment</Button>
-        </div>
 
-        <div suppressHydrationWarning>
-          {
-            token ?
-              <div className="flex justify-center md:justify-start md:ml-4 mt-4 md:mt-0">
-                <Button onClick={logout}
-                  className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-colors w-full md:w-auto'>
-                  Logout
-                </Button>
-              </div> :
-              <Link href={"/login"}>
+        <div className='flex gap-4'>
+          <div className="flex justify-center md:justify-start md:ml-4 mt-4 md:mt-0">
+            <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-colors w-full md:w-auto'>Appointment</Button>
+          </div>
+
+          <div>
+            {
+              token && token !== '' ?
                 <div className="flex justify-center md:justify-start md:ml-4 mt-4 md:mt-0">
-                  <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-colors w-full md:w-auto'>
-                    Login
+                  <Button onClick={logout}
+                    className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-colors w-full md:w-auto'>
+                    Logout
                   </Button>
-                </div>
-              </Link>
-          }
+                </div> :
+                <Link href={"/login"}>
+                  <div className="flex justify-center md:justify-start md:ml-4 mt-4 md:mt-0">
+                    <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-colors w-full md:w-auto'>
+                      Login
+                    </Button>
+                  </div>
+                </Link>
+            }
+          </div>
         </div>
       </nav>
     </header>
