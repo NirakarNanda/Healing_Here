@@ -3,7 +3,11 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { IoCloudUploadOutline } from "react-icons/io5";
 
-export const ContactSection = () => {
+interface ContactSectionprops{
+    id?: string;
+}
+
+export const ContactSection: React.FC <ContactSectionprops> = ({id}) => {
     const [preview, setPreview] = useState<string | ArrayBuffer | null>(null);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +22,7 @@ export const ContactSection = () => {
     };
 
     return (
-        <section className='px-4 sm:px-12 py-16'>
+        <section id={id} className='px-4 sm:px-12 py-16'>
             <h2 className='sm:pt-12 text-3xl sm:text-3xl md:text-4xl font-semibold text-center text-[#516EFF]'>
                 MAKE AN
                 <span className='text-[#FFD700]'> APPOINTMENT</span>
@@ -74,6 +78,21 @@ export const ContactSection = () => {
                             />
                         </div>
                         <div className='flex flex-1 flex-col'>
+                            <label htmlFor="Services">Services</label>
+                            <select
+                                className='w-full px-4 py-2.5 rounded-lg border-2 text-gray-400 focus:border-[#516EFF] outline-none'
+                                name="Services"
+                                id="Services"
+                                required
+                            >
+                        <option value="homevisit">Home Visit</option>
+                        <option value="onlineconsultation">Online Consultation</option>
+                        <option value="visitClinic">Visit Clinic</option>
+
+
+                            </select>
+                        </div>
+                        <div className='flex flex-1 flex-col'>
                             <label htmlFor="problem">Problem</label>
                             <select
                                 className='w-full px-4 py-2.5 rounded-lg border-2 text-gray-400 focus:border-[#516EFF] outline-none'
@@ -81,8 +100,17 @@ export const ContactSection = () => {
                                 id="problem"
                                 required
                             >
-                                <option value="backpain">Back Pain</option>
-                                <option value="shoulderpain">Shoulder Pain</option>
+                                <option value="neckpain">Neck Pain</option>
+                                <option value="kneeinjury">Knee Injury</option>
+                                <option value="hippain">Hip Pain</option>
+                                <option value="elbowpain">Elbow Pain</option>
+                                <option value="wristinjury">Wrist Injury</option>
+                                <option value="anklepain">Ankle Pain</option>
+                                <option value="sportsinjury">Sports Injury</option>
+                                <option value="posturecorrection">Posture Correction</option>
+                                <option value="rehabilitation">Rehabilitation</option>
+                                <option value="musclestrain">Muscle Strain</option>
+
                             </select>
                         </div>
                     </div>

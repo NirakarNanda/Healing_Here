@@ -1,6 +1,11 @@
 // KeyServices.tsx
 import React from 'react';
 import KeyCard from './ui/keyCard';
+import { Link } from 'react-scroll';
+
+interface KeyServicesprops{
+  id?: string;
+}
 
 const keyServices = [
   {
@@ -35,9 +40,9 @@ const keyServices = [
   }
 ];
 
-const KeyServices: React.FC = () => {
+const KeyServices: React.FC<KeyServicesprops> = ({id}) => {
   return (
-    <div className="container mx-auto px-4 py-12 relative">
+    <div id={id} className="container mx-auto px-4 py-12 relative">
       <div className="flex flex-col md:flex-row justify-between items-center mb-12">
         <div className="text-[#516EFF] text-[42px] font-semibold leading-[64px] w-full md:w-[502px] mb-4 md:mb-0">
           What Makes Us More
@@ -80,9 +85,12 @@ const KeyServices: React.FC = () => {
           <p className="text-white text-center font-inter text-base sm:text-lg font-normal leading-relaxed sm:leading-loose max-w-[1176px]">
             Empowering you to achieve better physical health and enhanced mobility is our commitment and passion. With over 5 years of experience, we proudly offer top-notch physiotherapy services tailored to your needs. Our patient-focused approach ensures comfort and effective care for you and your family.
           </p>
+          <Link to="contacts" smooth={true} duration={500}>
           <button className="bg-transparent hover:bg-white hover:text-[#516EFF] transition-colors duration-300 flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 border-2 border-white rounded-xl text-white font-inter text-base sm:text-lg font-medium">
             Make An Appointment
           </button>
+          </Link>
+
         </div>
       </div>
     </div>

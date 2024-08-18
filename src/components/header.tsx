@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Button } from 'flowbite-react';
 import Cookies from 'js-cookie';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
+import { Link } from 'react-scroll';
 
 export const Header = () => {
   const router = useRouter();
@@ -35,10 +35,11 @@ export const Header = () => {
   };
 
   return (
-    <header className="relative flex flex-col md:flex-row items-center p-2 md:p-4 md:pr-12 justify-between bg-white border-b-2">
+    <header className="fixed top-0 left-0 right-0 z-50 flex flex-col md:flex-row items-center p-3 md:p-4 justify-between bg-white border-b-2 transition-all duration-300 ease-in-out">
       {/* Logo Section */}
       <div className="flex items-center w-full md:w-auto">
-        <div className="relative w-64 h-16 cursor-pointer">
+        <div className="relative w-48 h-12 md:w-56 md:h-14 cursor-pointer transform hover:scale-105 transition-transform duration-300"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <Image
             src="/assets/Colour Logo.png"
             alt="logo"
@@ -51,44 +52,36 @@ export const Header = () => {
       </div>
 
       {/* Hamburger Icon */}
-      <div className="absolute top-1/2 -translate-y-1/2 right-4 sm800:hidden md:hidden cursor-pointer" onClick={toggleMenu}>
+      <div className="absolute top-1/2 -translate-y-1/2 right-4 md:hidden cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-110" onClick={toggleMenu}>
         {isMenuOpen ? <FaTimes size={24} color="#000" /> : <FaBars size={24} color="#000" />}
       </div>
 
       {/* Navigation and Appointment Button */}
-      <nav className={`flex flex-col md:flex-row md:items-center md:space-x-8 mt-4 md:mt-0 ${isMenuOpen ? 'block' : 'hidden'} md:flex`}>
-        <div className="flex flex-col md:flex-row gap-1 sm800:gap-2 w-full">
-          <p className='cursor-pointer px-4 py-2 text-black hover:text-[#516EFF] transition-colors whitespace-nowrap'>Home</p>
-          <p className='cursor-pointer px-4 py-2 text-black hover:text-[#516EFF] transition-colors whitespace-nowrap'>Services</p>
-          <p className='cursor-pointer px-4 py-2 text-black hover:text-[#5169E1] transition-colors whitespace-nowrap'>Specialization</p>
-          <p className='cursor-pointer px-4 py-2 text-black hover:text-[#5169E1] transition-colors whitespace-nowrap'>Achievements</p>
-          <p className='cursor-pointer px-4 py-2 text-black hover:text-[#5169E1] transition-colors whitespace-nowrap'>Contacts</p>
+      <nav className={`flex flex-col md:flex-row md:items-center md:space-x-6 mt-4 md:mt-0 ${isMenuOpen ? 'block' : 'hidden'} md:flex transition-all duration-300 ease-in-out`}>
+        <div className="flex flex-col md:flex-row gap-1 md:gap-2 w-full">
+          {['home', 'services', 'specialization', 'achievements', 'address','contact-us'].map((item) => (
+            <Link key={item} to={item} smooth={true} duration={500}>
+              <p className='cursor-pointer px-3 py-2 text-black hover:text-[#516EFF] transition-colors whitespace-nowrap transform hover:translate-y-[-2px] transition-transform duration-300'>{item.charAt(0).toUpperCase() + item.slice(1)}</p>
+            </Link>
+          ))}
         </div>
 
+        <div className='flex flex-col md:flex-row gap-4 mt-4 md:mt-0'>
+          <Link to="contacts" smooth={true} duration={500}>
+            <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-all duration-300 w-full md:w-auto transform hover:scale-105'>Appointment</Button>
+          </Link>
 
-        <div className='flex gap-4'>
-          <div className="flex justify-center md:justify-start md:ml-4 mt-4 md:mt-0">
-            <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-colors w-full md:w-auto'>Appointment</Button>
-          </div>
-
-          <div>
-            {
-              token && token !== '' ?
-                <div className="flex justify-center md:justify-start md:ml-4 mt-4 md:mt-0">
-                  <Button onClick={logout}
-                    className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-colors w-full md:w-auto'>
-                    Logout
-                  </Button>
-                </div> :
-                <Link href={"/login"}>
-                  <div className="flex justify-center md:justify-start md:ml-4 mt-4 md:mt-0">
-                    <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-colors w-full md:w-auto'>
-                      Login
-                    </Button>
-                  </div>
-                </Link>
-            }
-          </div>
+          {token && token !== '' ? (
+            <Button onClick={logout} className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-all duration-300 w-full md:w-auto transform hover:scale-105'>
+              Logout
+            </Button>
+          ) : (
+            <Link href="/login">
+              <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-all duration-300 w-full md:w-auto transform hover:scale-105'>
+                Doctor's Space
+              </Button>
+            </Link>
+          )}
         </div>
       </nav>
     </header>

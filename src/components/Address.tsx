@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Address: React.FC = () => {
+interface AddressProps {
+  id?: string;
+}
+
+const Address: React.FC<AddressProps> = ({id}) => {
   // URL for Google Maps with the location
   const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=Bijayalakshmi+Physiotherapy+Clinic,+Patabhadi,+near+RTO+office,+Sonepur,+767017';
 
   return (
-    <div className="bg-white p-8 md:p-16">
+    <div id={id} className="bg-white p-8 md:p-16">
       {/* Heading */}
       <div className="flex items-center justify-center mb-8">
         <h1 className="text-[42px] font-bold leading-[74px]">
@@ -27,8 +31,8 @@ const Address: React.FC = () => {
             <p className="text-black font-poppins text-base md:text-lg mb-6">
               <span className="text-yellow-500 font-bold text-base md:text-lg">Monday - Saturday</span>
               <br />
-              <span className="text-green-500 font-bold text-base md:text-lg">8:30 AM - 12:00 AM</span> and 
-              <span className="text-red-500 font-bold text-base md:text-lg"> 4:30 PM - 9:00 PM</span>
+              <span className="text-green-500 font-bold text-base md:text-lg">9 AM - 11:30 AM</span> and 
+              <span className="text-red-500 font-bold text-base md:text-lg"> 4 PM - 8:30 PM</span>
             </p>
             <div className="flex items-center mb-6">
               <img 

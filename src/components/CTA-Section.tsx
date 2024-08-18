@@ -5,6 +5,7 @@ import { ImageCard } from "./ui/ImageCards";
 import { IoCallOutline } from "react-icons/io5";
 import { BsCalendar2Date } from "react-icons/bs";
 import { CiMedicalCase } from "react-icons/ci";
+import { Link } from "react-scroll";
 
 
 export const CTASection = () => {
@@ -21,11 +22,21 @@ export const CTASection = () => {
           <IconsCard Icon={CiMedicalCase} content={"Consult Your Physiotherapist"} />
         </div>
       </div>
-      <div className="px-4 py-8 sm:px-28 grid lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-20">
-          <ImageCard img="/assets/Icons.png" content="Well equipped lab" />
+      <div className="px-4 py-8 sm:px-28 grid lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-20 cursor-pointer">
+      <Link to="address" smooth={true} duration={500}>
+      <ImageCard img="/assets/Icons.png" content="Well equipped lab" />
+      </Link>
+          <Link to="contacts" smooth={true} duration={500}>
           <ImageCard img="/assets/Frame 409.png" content="Home Visit" colour="#516EFF" />
+          </Link> 
+          <Link to="contacts" smooth={true} duration={500}>
           <ImageCard img="/assets/Group 38.png" content="Online Appointment" />
+          </Link>
+          <Link to="contacts" smooth={true} duration={500}>
           <ImageCard img="/assets/Telemedicine.png" content="Online Consultation" />
+          </Link>
+          
+          
       </div>
     </section>
   )
