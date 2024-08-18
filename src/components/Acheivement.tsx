@@ -128,8 +128,7 @@ const AchievementCarousel: React.FC<AchievementProps> = ({ id }) => {
                     alt={achievement.title}
                     width={500}
                     height={640}
-                    objectFit="cover"
-                    className="rounded-t-lg"
+                    className="rounded-t-lg object-cover"
                   />
                 ) : (
                   <video

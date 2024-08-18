@@ -115,7 +115,7 @@ export const ContactSection: React.FC <ContactSectionprops> = ({id}) => {
                         </div>
                     </div>
                     <div className='flex flex-col lg:flex-row gap-4 md:gap-10'>
-                        <label htmlFor="uploads" className='flex items-center gap-3'>
+                        <label htmlFor="uploads" className='flex items-center gap-3 hover:cursor-pointer'>
                             <span>Upload Your Photo</span>
                             <IoCloudUploadOutline className='text-black text-4xl border-2 rounded-lg p-1' />
                             <input

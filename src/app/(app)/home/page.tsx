@@ -1,17 +1,17 @@
-"use client"
-import { Hero } from "@/components/hero";
-import KeyServices from "@/components/keyServices";
-import { LinkBox } from "@/components/LinkBox";
-import { RecoverySection } from "@/components/RecoverySection";
+"use client";
+import { Hero } from "@/src/components/hero";
+import KeyServices from "@/src/components/keyServices";
+import { LinkBox } from "@/src/components/LinkBox";
+import { RecoverySection } from "@/src/components/RecoverySection";
 import Image from "next/image";
 import { IconBaseProps } from "react-icons";
-import { ServiceSection } from "@/components/ServiceSection";
-import { ContactSection } from "@/components/Contact";
-import Review from "@/components/Review";
-import Address from "@/components/Address";
-import { CTASection } from "@/components/CTA-Section";
-import AchievementCarousel from "@/components/Acheivement";
-import { Footer } from "@/components/Footer";
+import { ServiceSection } from "@/src/components/ServiceSection";
+import { ContactSection } from "@/src/components/Contact";
+import Review from "@/src/components/Review";
+import Address from "@/src/components/Address";
+import { CTASection } from "@/src/components/CTA-Section";
+import AchievementCarousel from "@/src/components/Acheivement";
+import { Footer } from "@/src/components/Footer";
 
 export default function Home() {
   return (
