@@ -42,12 +42,14 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col md:flex-row items-center p-3 md:p-4 justify-between bg-white border-b-2 transition-all duration-300 ease-in-out">
       {/* Logo Section */}
       <div className="flex items-center w-full md:w-auto">
-        <div className="relative w-96 h-28 md:w-64 md:h-20 cursor-pointer transform hover:scale-105 transition-transform duration-300"
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <div 
+          className="relative w-64 h-16 md:w-48 md:h-16 cursor-pointer transform hover:scale-105 transition-transform duration-300"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           <Image
-            src="/assets/Colour Logo.png"
+            src="/assets/Header Logo.png"
             alt="logo"
-            sizes='(max-width: 768px) 100vw,'
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             fill
             priority={true}
             style={{ objectFit: 'contain' }}
@@ -63,16 +65,20 @@ export const Header = () => {
       {/* Navigation and Appointment Button */}
       <nav className={`flex flex-col md:flex-row md:items-center md:space-x-6 mt-4 md:mt-0 ${isMenuOpen ? 'block' : 'hidden'} md:flex transition-all duration-300 ease-in-out`}>
         <div className="flex flex-col md:flex-row gap-1 md:gap-2 w-full">
-          {['home', 'services', 'specialization', 'achievements', 'address','contact-us'].map((item) => (
+          {['home', 'services', 'specialization', 'achievements', 'address', 'contact-us'].map((item) => (
             <Link key={item} to={item} smooth={true} duration={500}>
-              <p className='cursor-pointer px-3 py-2 text-black hover:text-[#516EFF] transition-colors whitespace-nowrap transform hover:translate-y-[-2px] transition-transform duration-300'>{item.charAt(0).toUpperCase() + item.slice(1)}</p>
+              <p className='cursor-pointer px-3 py-2 text-black hover:text-[#516EFF] transition-colors whitespace-nowrap transform hover:translate-y-[-2px] transition-transform duration-300'>
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </p>
             </Link>
           ))}
         </div>
 
         <div className='flex flex-col md:flex-row gap-4 mt-4 md:mt-0'>
           <Link to="contacts" smooth={true} duration={500}>
-            <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-all duration-300 w-full md:w-auto transform hover:scale-105'>Appointment</Button>
+            <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-all duration-300 w-full md:w-auto transform hover:scale-105'>
+              Appointment
+            </Button>
           </Link>
 
           {token && token !== '' ? (

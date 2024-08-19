@@ -5,20 +5,28 @@ import { Header } from "@/src/components/header";
 import { Hero } from "@/src/components/hero";
 import KeyServices from "@/src/components/keyServices";
 import { RecoverySection } from "@/src/components/RecoverySection";
-import { Footer } from "flowbite-react";
+import { ServiceSection } from "../components/ServiceSection";
+import { ContactSection } from "../components/Contact";
+import Education from "../components/Education";
+import Review from "../components/Review";
+import Address from "../components/Address";
+import { Footer } from "../components/Footer";
 
 export default function Home() {
   return (
     <>
       <Header/>
-      <Hero/>
+      <Hero id="home"/>
       <CTASection/>
       <RecoverySection/>
-      <AchievementCarousel/>
-      <KeyServices/>
-      <Footer />
-      {/* <Header/>
-      <Hero/> */}
+      <AchievementCarousel id="achievements"/>
+      <KeyServices id="specialization"/>
+      <Education/>
+      <ContactSection id="contacts"/>
+      <ServiceSection id="services"/>
+      <Review/>
+      <Address id="address"/>
+      <Footer id="contact-us"/>
     </>
   );
 }

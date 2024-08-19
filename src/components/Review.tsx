@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
 
 // Define image URLs
 const imageUrls = [
@@ -72,26 +70,20 @@ const Review: React.FC = () => {
       text: 'Cherry on top is that, they even call you afterwards for checking your condition.',
     },
   ];
-
   return (
     <div className="bg-blue-500 py-12 md:py-16 flex items-center justify-center">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto w-full px-4">
         <Swiper
-          modules={[Navigation, Pagination, Autoplay, EffectFade]}
+          modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
-          navigation
           pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          effect="fade" 
-          speed={2000}    
-          loop={true}    
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
         >
           {reviews.map((review, index) => (
             <SwiperSlide key={index}>
               <div className="flex flex-col md:flex-row items-center">
-                <div className="relative w-48 md:w-60 flex-shrink-0 mb-8 md:mb-0 md:mr-8">
+                <div className="relative w-full md:w-1/3 flex-shrink-0 mb-8 md:mb-0 md:mr-8">
                   <div
                     className="absolute top-0 left-1/2 transform -translate-x-1/2"
                     style={{
@@ -111,10 +103,7 @@ const Review: React.FC = () => {
                       <p className="font-semibold text-blue-500">{review.author_name}</p>
                       <div className="flex justify-center">
                         {[...Array(5)].map((_, i) => (
-                          <span
-                            key={i}
-                            className={`text-yellow-400 ${i < review.rating ? 'opacity-100' : 'opacity-30'}`}
-                          >
+                          <span key={i} className={`text-yellow-400 ${i < review.rating ? 'opacity-100' : 'opacity-30'}`}>
                             ★
                           </span>
                         ))}
@@ -123,15 +112,11 @@ const Review: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex-1 text-center md:text-left">
-                  <h2 className="text-white text-xl md:text-2xl font-bold mb-4">
-                    What our clients say about us
-                    
-                  </h2>
-                  <p className='text-white text-sm'>Note: The review Image are Shuffled</p>
+                  <h2 className="text-white text-xl md:text-2xl font-bold mb-4">What our clients say about us</h2>
+                  <p className="text-white text-sm mb-4">Note: The review Image are Shuffled</p>
                   <img src="/assets/Quote1.png" alt="Quote" className="mx-auto md:mx-0 mb-4" />
                   <blockquote className="text-white text-base md:text-lg">"{review.text}"</blockquote>
                 </div>
-                
               </div>
             </SwiperSlide>
           ))}
