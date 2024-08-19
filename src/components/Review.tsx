@@ -1,3 +1,4 @@
+import axios, { AxiosError } from 'axios';
 import React, { useState, useEffect } from 'react';
 
 interface GoogleReview {
@@ -15,16 +16,13 @@ const Review: React.FC = () => {
   useEffect(() => {
     const fetchGoogleReviews = async () => {
       try {
-        const response = await fetch('/api/reviews');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setReviews(data);
-      } catch (error) {
+        const response = await axios.get('/api/reviews');
+        setReviews(response.data.reviews);
+      }
+      catch (error: AxiosError | any) {
         console.error('Error fetching Google reviews:', error);
       }
-    };    
+    };
 
     fetchGoogleReviews();
   }, []);
@@ -52,11 +50,11 @@ const Review: React.FC = () => {
               borderRadius: '8px',
             }}
           ></div>
-          
+
           <div className="relative w-full bg-white rounded-lg p-4 flex-shrink-0">
-            <img 
-              src={currentReview.profile_photo_url} 
-              alt={currentReview.author_name} 
+            <img
+              src={currentReview.profile_photo_url}
+              alt={currentReview.author_name}
               className="w-full h-60 object-cover rounded mx-auto"
             />
             <div className="mt-2 text-center">
@@ -79,8 +77,8 @@ const Review: React.FC = () => {
           </blockquote>
           <div className="mt-4 flex justify-center md:justify-start">
             {reviews.map((_, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className={`w-2 h-2 rounded-full mr-2 cursor-pointer ${i === currentReviewIndex ? 'bg-white' : 'bg-gray-300'}`}
                 onClick={() => handleDotClick(i)}
               ></div>
