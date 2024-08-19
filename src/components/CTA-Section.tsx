@@ -1,6 +1,6 @@
 "use client";
 
-import { IconsCard } from "@/components/ui/IconsCard";
+import { IconsCard } from "@/src/components/ui/IconsCard";
 import { ImageCard } from "./ui/ImageCards";
 import { IoCallOutline } from "react-icons/io5";
 import { BsCalendar2Date } from "react-icons/bs";

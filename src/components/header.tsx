@@ -8,6 +8,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { Link } from 'react-scroll';
+import NextLink from "next/link";
 
 export const Header = () => {
   const router = useRouter();
@@ -16,7 +17,6 @@ export const Header = () => {
 
   useEffect(() => {
     const token = Cookies.get('token') || '';
-    console.log("Token", token);
     setToken(token);
   }, []);
 
@@ -76,11 +76,11 @@ export const Header = () => {
               Logout
             </Button>
           ) : (
-            <Link href="/login">
-              <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-all duration-300 w-full md:w-auto transform hover:scale-105'>
+            <NextLink href="/login">
+              <Button className='whitespace-nowrap bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-all duration-300 w-full md:w-auto transform hover:scale-105'>
                 Doctor's Space
               </Button>
-            </Link>
+            </NextLink>
           )}
         </div>
       </nav>
