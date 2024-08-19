@@ -65,7 +65,7 @@ export const ContactSection: React.FC<ContactSectionprops> = ({ id }) => {
             </h3>
             <div className='grid grid-cols-1 gap-8 place-items-center sm:gap-0 md:grid-cols-2'>
                 <Image
-                    src={"/assets/contact.png"}
+                    src="/assets/fun.png"
                     alt='contact image'
                     width={500}
                     height={100}
