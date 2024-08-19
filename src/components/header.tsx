@@ -88,7 +88,7 @@ export const Header = () => {
           ) : (
             <NextLink href="/login">
               <Button className='whitespace-nowrap bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-all duration-300 w-full md:w-auto transform hover:scale-105'>
-                Doctor's Space
+              Doctor&apos;s Space
               </Button>
             </NextLink>
           )}
