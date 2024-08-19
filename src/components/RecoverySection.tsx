@@ -37,7 +37,7 @@ export const RecoverySection = () => {
                 {/* Right Side: Text Content */}
                 <div className="w-full lg:w-1/2 flex flex-col p-6 lg:p-12 space-y-8 bg-[#F8FAFC] rounded-lg shadow-md">
                     <p className="text-lg lg:text-xl border-b pb-6 text-gray-700 ">
-                        "We also offer treatments that enhance your physical well-being, giving you the confidence boost you deserve. Explore our treatment process below."
+                    &apos;We also offer treatments that enhance your physical well-being, giving you the confidence boost you deserve. Explore our treatment process below.&apos;
                     </p>
                     <div className="space-y-6">
                         <h3 className="text-2xl font-semibold text-[#516EFF]">WHAT WE PROVIDE</h3>
