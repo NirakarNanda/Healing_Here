@@ -12,6 +12,7 @@ import Address from "@/src/components/Address";
 import { CTASection } from "@/src/components/CTA-Section";
 import AchievementCarousel from "@/src/components/Acheivement";
 import { Footer } from "@/src/components/Footer";
+import Education from "@/src/components/Education";
 
 export default function Home() {
 
@@ -22,6 +23,7 @@ export default function Home() {
       <RecoverySection/>
       <AchievementCarousel id="achievements"/>
       <KeyServices id="specialization"/>
+      <Education/>
       <ContactSection id="contacts"/>
       <ServiceSection id="services"/>
       <Review/>
