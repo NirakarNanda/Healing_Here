@@ -25,7 +25,7 @@ export const Hero: React.FC<HeroProps> = ({ id }) => {
       <div className="flex-1 relative">
         <Image 
           loading="lazy" 
-          src="/assets/illustration.png" 
+          src="/assets/hero.png" 
           alt="Physiotherapy treatment illustration" 
           width={640} 
           height={540} 
