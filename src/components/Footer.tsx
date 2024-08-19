@@ -39,8 +39,10 @@ export const Footer: React.FC<Contactusprops> = ({ id }) => {
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 xl:gap-16">
                         <div className="flex flex-col gap-2">
-                            <LinkBox Icon={FaFacebook} content={"Facebook"} />
-                            <LinkBox Icon={FaTwitter} content={"Twitter"} />
+                        <a href="https://www.facebook.com/abhilash.nanda.77?mibextid=rS40aB7S9Ucbxw6v" className="flex items-center gap-4 text-base sm:text-lg hover:underline">
+                        <LinkBox Icon={FaFacebook} content={"Facebook"}  />
+                        </a>
+                            <LinkBox Icon={FaTwitter} content={"Twitter"}/>
                             <LinkBox Icon={FaInstagramSquare} content={"Instagram"} />
                             <LinkBox Icon={FaLinkedin} content={"LinkedIn"} />
                         </div>
@@ -79,9 +81,11 @@ export const Footer: React.FC<Contactusprops> = ({ id }) => {
             </div>
 
             {/* Footer bottom */}
-            <div className="w-full py-2 sm:py-5 text-xs sm:text-base text-center bg-[#216583]">
-                <p>© 2000-2021, All rights reserved</p>
+            <div className="w-full py-2 sm:py-5 text-xs sm:text-base text-center bg-[#216583] flex justify-between items-center px-4">
+            <p>© 2024, All rights reserved</p>
+            <p>Powered by Team</p>
             </div>
+
         </footer>
     );
 };

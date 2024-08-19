@@ -34,11 +34,15 @@ export const Header = () => {
     }
   };
 
+  const handleDoctorSpaceClick = () => {
+    router.push('/login');
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col md:flex-row items-center p-3 md:p-4 justify-between bg-white border-b-2 transition-all duration-300 ease-in-out">
       {/* Logo Section */}
       <div className="flex items-center w-full md:w-auto">
-        <div className="relative w-48 h-12 md:w-56 md:h-14 cursor-pointer transform hover:scale-105 transition-transform duration-300"
+        <div className="relative w-96 h-28 md:w-64 md:h-20 cursor-pointer transform hover:scale-105 transition-transform duration-300"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <Image
             src="/assets/Colour Logo.png"
@@ -76,11 +80,9 @@ export const Header = () => {
               Logout
             </Button>
           ) : (
-            <Link href="/login">
-              <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-all duration-300 w-full md:w-auto transform hover:scale-105'>
-                Doctor's Space
-              </Button>
-            </Link>
+            <Button onClick={handleDoctorSpaceClick} className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-all duration-300 w-full md:w-auto transform hover:scale-105'>
+              Doctor's Space
+            </Button>
           )}
         </div>
       </nav>

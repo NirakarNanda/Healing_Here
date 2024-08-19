@@ -100,7 +100,7 @@ const AchievementCarousel: React.FC<AchievementProps> = ({ id }) => {
         slidesPerView={1}
         loop={true}
         autoplay={{
-          delay: 3000,
+          delay: 2000,
           disableOnInteraction: false,
         }}
         speed={1000}

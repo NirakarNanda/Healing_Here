@@ -1,4 +1,5 @@
 "use client"
+import React from 'react';
 import { Hero } from "@/components/hero";
 import KeyServices from "@/components/keyServices";
 import { LinkBox } from "@/components/LinkBox";
@@ -14,6 +15,7 @@ import AchievementCarousel from "@/components/Acheivement";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
+
   return (
     <>
       <Hero id="home"/>
