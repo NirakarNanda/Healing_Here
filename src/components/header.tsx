@@ -22,6 +22,8 @@ export const Header = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const closeMenu = () => setIsMenuOpen(false);
+
   const logout = async () => {
     const response = await axios.get('/api/logout');
     if (response.data.success) {
@@ -66,7 +68,13 @@ export const Header = () => {
       <nav className={`flex flex-col md:flex-row md:items-center md:space-x-6 mt-4 md:mt-0 ${isMenuOpen ? 'block' : 'hidden'} md:flex transition-all duration-300 ease-in-out`}>
         <div className="flex flex-col md:flex-row gap-1 md:gap-2 w-full">
           {['home', 'services', 'specialization', 'achievements', 'address', 'contact-us'].map((item) => (
-            <Link key={item} to={item} smooth={true} duration={500}>
+            <Link 
+              key={item} 
+              to={item} 
+              smooth={true} 
+              duration={1000}
+              onClick={closeMenu}
+            >
               <p className='cursor-pointer px-3 py-2 text-black hover:text-[#516EFF] transition-colors whitespace-nowrap transform hover:translate-y-[-2px] transition-transform duration-300'>
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </p>
@@ -75,7 +83,7 @@ export const Header = () => {
         </div>
 
         <div className='flex flex-col md:flex-row gap-4 mt-4 md:mt-0'>
-          <Link to="contacts" smooth={true} duration={500}>
+          <Link to="contacts" smooth={true} duration={1000} onClick={closeMenu}>
             <Button className='bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-all duration-300 w-full md:w-auto transform hover:scale-105'>
               Appointment
             </Button>
@@ -88,7 +96,7 @@ export const Header = () => {
           ) : (
             <NextLink href="/login">
               <Button className='whitespace-nowrap bg-[#5169E1] text-white rounded hover:bg-[#4353B3] transition-all duration-300 w-full md:w-auto transform hover:scale-105'>
-              Doctor&apos;s Space
+                Doctor&apos;s Space
               </Button>
             </NextLink>
           )}

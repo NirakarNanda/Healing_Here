@@ -19,7 +19,7 @@ export const Hero: React.FC<HeroProps> = ({ id }) => {
         <p className="text-gray-700 font-sans text-lg md:text-xl lg:text-2xl leading-relaxed">
           Welcome to Healing Here, your trusted partner in physiotherapy. Our experts specialize in personalized treatments for injury recovery, chronic pain management, and enhanced physical performance. Using state-of-the-art techniques and compassionate care, we help you achieve optimal health and mobility.
         </p>
-        <Link to="contacts" smooth={true} duration={500}>
+        <Link to="contacts" smooth={true} duration={1000}>
         <button className="bg-[#4169E1] text-white font-sans text-lg md:text-xl font-semibold py-3 px-8 rounded-lg hover:bg-blue-600 transition-colors">
           Get Started
         </button>
