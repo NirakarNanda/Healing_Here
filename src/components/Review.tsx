@@ -37,13 +37,13 @@ const Review: React.FC = () => {
       profile_photo_url: shuffledImageUrls[0],
       author_name: 'Dr. Niharika Jain',
       rating: 5,
-      text: "It's a best place with a humble physio... must visit if u r searching for a physiotherapist..",
+      text: 'Its a best place with a humble physio... must visit if you are searching for a physiotherapist..',
     },
     {
       profile_photo_url: shuffledImageUrls[1],
       author_name: 'Devarushi Mishra',
       rating: 5,
-      text: "A very professional and meanwhile charming and friendly Dr. Abhilash Nanda fixed my lower back pain , Thank you for your excellent care. The best physiotherapy clinic in Sonpur",
+      text: 'A very professional and meanwhile charming and friendly Dr. Abhilash Nanda fixed my lower back pain , Thank you for your excellent care. The best physiotherapy clinic in Sonpur',
     },
     {
       profile_photo_url: shuffledImageUrls[2],
@@ -115,7 +115,7 @@ const Review: React.FC = () => {
                   <h2 className="text-white text-xl md:text-2xl font-bold mb-4">What our clients say about us</h2>
                   <p className="text-white text-sm mb-4">Note: The review Image are Shuffled</p>
                   <img src="/assets/Quote1.png" alt="Quote" className="mx-auto md:mx-0 mb-4" />
-                  <blockquote className="text-white text-base md:text-lg">"{review.text}"</blockquote>
+                  <blockquote className="text-white text-base md:text-lg">{review.text}</blockquote>
                 </div>
               </div>
             </SwiperSlide>
