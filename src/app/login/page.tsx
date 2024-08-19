@@ -49,7 +49,7 @@ const Login = () => {
     <main className=' h-screen flex flex-col md:flex-row  bg-[#FBFCF8]'>
       <div className='w-full md:w-[50%] lg:w-[40%] px-4 py-6 sm:px-16 sm:py-12 flex flex-col gap-4'>
         <Image
-          src={"/assets/Colour Logo.png"}
+          src={"/assets/Header Logo.png"}
           alt="logo"
           sizes='(max-width: 768px) 100vw,'
           width={200}
